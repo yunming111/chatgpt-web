@@ -2,12 +2,12 @@
 import { computed, useAttrs } from 'vue'
 import { Icon } from '@iconify/vue'
 
-interface Props {
-  icon?: string
-}
-
-defineProps<Props>()
-
+defineProps({
+  icon: {
+    type: String,
+    default: '',
+  },
+})
 const attrs = useAttrs()
 
 const bindAttrs = computed<{ class: string; style: string }>(() => ({
